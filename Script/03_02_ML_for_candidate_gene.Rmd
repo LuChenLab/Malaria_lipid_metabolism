@@ -388,8 +388,8 @@ ggplot(Feature_Importance, aes(x = Overall, y = Feature)) +
   scale_x_continuous(expand = expansion(mult = c(0, 0.05)))
 ```
 
-#6. 用模型进行预测 
-##6.1. 加载所有基因 (中位数填充)
+#6. 
+##6.1.
 ```{r}
 Feature_ori <- readRDS("../Data/03_GeneInfo_forML.Rds")%>%as.data.table()
 Feature <- Feature_ori[, c(7:28)]
@@ -398,7 +398,7 @@ Feature$Name <- Feature_ori$ID
 Feature%<>%as.data.frame()
 Feature <- Feature[,-1]
 ```
-##6.2. 预测并赋予概率打分
+##6.2.
 ```{r}
 Predict_gene <- Feature[,feature_selection$selected_features]
 Predict_classes <- predict(result$best_model, newdata = Predict_gene)
@@ -407,7 +407,7 @@ Feature$Prop <- Predict_prop$pos
 Feature%<>%as.data.table()
 setkey(Feature,Name)
 ```
-##6.3. 筛选Top10
+##6.3.
 ```{r}
 #
 Pb_gene_ori <- readRDS("../Analysis/02_01_pb_mfuzz_gene.Rds")

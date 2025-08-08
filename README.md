@@ -134,7 +134,9 @@ final_model <- Tune_model_eval(prepared_data = fs_result, model_name = "XX")
 Plot_roc_curves(final_model$train_roc_list, final_model$test_roc, title = "ROC Curves")
 Plot_pr_curves(final_model$train_pr_list, final_model$test_pr, title = "Precision-Recall Curves")
 ```
+## Examples
 
+Visit [wiki]([https://github.com/LuChenLab/Malarialipidmetabolism/wiki](https://github.com/LuChenLab/Malarialipidmetabolism/wiki)) for examples of running MRS.
 ---
 
 ## 📚 References

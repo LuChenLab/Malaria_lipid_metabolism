@@ -145,7 +145,7 @@ GSEA_GO   <- gseGO(geneList = genelist
 ```
 ##6.2.
 ```{r,fig.width = 5,fig.height=5}
-N <- grep("glycolipid biosynthetic process",GSEA_GO@result$Description)
+N <- grep("membrane lipid metabolic process",GSEA_GO@result$Description,ignore.case = T)
 gseaNb(object =GSEA_GO,geneSetID = N)  
 ```
 
